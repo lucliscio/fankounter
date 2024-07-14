@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C)2022 HZKnight
+ * Copyright (C)2024 HZKnight
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -40,8 +40,8 @@
  * Modulo per la visualizzazione dei dati statistici.
  *
  *  @author  lucliscio <lucliscio@h0model.org>
- *  @version v 5.1
- *  @copyright Copyright 2022 HZKnight
+ *  @version v 5.1.1
+ *  @copyright Copyright 2024 HZKnight
  *  @copyright Copyright 2003 Fanatiko
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *
@@ -67,6 +67,8 @@ require("dic.inc.php");
 require("cal.inc.php");
 require("i18n/".LANG.".inc.php");
 
+session_start();
+
 ############################################################################################
 # INIZIALIZZAZIONE DELLE LIBRERIE
 ############################################################################################
@@ -80,7 +82,12 @@ $view = new RainTPL();
 # PARAMETRI IN INPUT
 ############################################################################################
 
-$par__id=(isset($par__id)&&preg_match("/^[a-z\d]+$/i",$par__id))?$par__id:FALSE;
+$par__id=(isset($_POST['id'])&&preg_match("/^[a-z\d]+$/i",$_POST['id']))?$_POST['id']:FALSE;
+
+if(!isset($par__passwd)&&isset($_SESSION['passwd'])){
+    $par__passwd = $_SESSION['passwd'];
+}
+
 $par__passwd=(isset($par__passwd)&&($par__passwd!==""))?$par__passwd:FALSE;
 $par__panel=(isset($par__panel)&&preg_match("/^(0|1|2|3|4|5)+$/",$par__panel))?(int)$par__panel:0;
 
@@ -134,10 +141,13 @@ if(($par__id===FALSE)||($cnf__passwd_protect&&(md5($par__passwd)!==$cnf__userpas
 
     exit();
 }
-elseif($cnf__passwd_protect)
- setcookie("passwd",$par__passwd);
-else
- setcookie("passwd","");
+elseif($cnf__passwd_protect){
+    setcookie("passwd",$par__passwd, time() + 96400, '/', $_SERVER['HTTP_HOST']);
+    $_SESSION['passwd'] = $par__passwd;
+} else {
+    setcookie("passwd","");
+    unset($_SESSION['passwd']);
+}
 
 ############################################################################################
 # DEFINIZIONE DELLE VARIABILI DI SUPPORTO

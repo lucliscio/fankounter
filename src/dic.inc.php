@@ -198,7 +198,7 @@ Array(
         Array('StartNow','search.startnow.*','be','q','start',10),
         Array('Search','search.it','it','srctxt',null,null),
         Array('Search','search.com','us','q',null,null),
-        Array('Babylon','babylon.com','us','q',null,null)
+        Array('Babylon','babylon.com','us','q',null,null));
 
 ############################################################################################
 # CHIAVI DI RICERCA

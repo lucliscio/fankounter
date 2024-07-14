@@ -22,13 +22,11 @@
                             <tr>
 
                             <?php $counter1=-1; if( isset($menus) && is_array($menus) && sizeof($menus) ) foreach( $menus as $key1 => $value1 ){ $counter1++; ?>
-
 								<td valign="bottom">
                                     <form method="post" action="<?php echo $action;?>">
                                         <input type="hidden" name="id" value="<?php echo $value1->id;?>"/>
                                         <input type="hidden" name="panel" value="<?php echo $value1->panel;?>"/>
                                         <?php echo $value1->tab_header;?>
-
                                     </form>
                                 </td>
         					<?php } ?>	
@@ -46,7 +44,6 @@
                     <td class="conteiner">
                         <p class="header"><?php echo $header;?></p>
                         <?php echo $content;?>
-
                         <p class="top"><a href="javascript:scroll(0,0);"><?php echo $top;?></a></p>
                     </td>
                 </tr>
