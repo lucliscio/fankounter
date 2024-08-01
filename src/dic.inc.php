@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------
  * Licence
  * -------------------------------------------------------------------------------------------
- * Copyright (C)2022  HZKnight
+ * Copyright (C)2024  HZKnight
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -41,7 +41,7 @@
  * 
  *  @author  lucliscio <lucliscio@h0model.org>
  *  @version v 5.1
- *  @copyright Copyright 2022 HZKnight
+ *  @copyright Copyright 2024 HZKnight
  *  @copyright Copyright 2003 Fanatiko 
  *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
  *   
@@ -119,6 +119,8 @@ $inf__os = array(
 # MOTORI DI RICERCA
 ############################################################################################
 
+/*
+ * old version:
 $inf__engine = array(
  "abacho"      => "(q)",
  "abcitaly"    => "(look_for)",
@@ -146,59 +148,146 @@ $inf__engine = array(
  "tuttogratis" => "(keywords)",
  "virgilio"    => "(qs)",
  "yahoo"       => "(p|va|vp|vo)"
-);
+);*/
 
-$search_engines_def=
-Array(
-
-        Array('Kataweb','kataweb.it','it','q','start',10),
-        Array('Il Trovatore','categorie.iltrovatore.it','it','query','nh',1),
-        Array('Il Trovatore','search.iltrovatore.it','it','q','np',1),
-        Array('2020Search','2020search.c','us','st','pn',1),
-        Array('abcsearch.com','abcsearch.com','us','terms','offset',10),
-        Array('Abacho','search.abacho.com/*/','de','q','offset',10),
-        Array('100Links','100links.supereva.it','it','q','pag',1),
-        Array('Alexa','alexa.com','us','q','page',1),
-        Array('Alltheweb','alltheweb.com','us','q','o',10),
-        Array('Aol','search.aol.com','us','query','page',1),
-        Array('Aol','aolrecherches.aol.fr','fr','query','first',10),
-        Array('Ask','ask.com','us','ask','page',1),
-        Array('Ask','ask.com','us','q','page',1),
-        Array('DMOZ','search.dmoz.org','us','search',null,null),
-        Array('Dogpile','dogpile.com','us','q',null,null),
-        Array('Excite','excite.*','us','q','offset',10),
-        Array('Excite','excite.*','us','key','offset',10),
-        Array('Excite','excite.*','us','qkw','offset',10),
-        Array('Excite','excite.*','us','search','offset',10),
-        Array('Godago','*.godado.com','us','keywords',null,null),
-        Array('Godago','godado.*','us','keywords',null,null),
-        Array('HotBot','hotbot.*','us','query','first',10),
-        Array('ixquick','ixquick.com','us','query','startat',10),
-        Array('Lycos','lycos.*','us','q','pag',1),
-        Array('Lycos','lycos.*','us','query','pag',1),
-        Array('My Search','mysearch.com','us','searchfor','fr',10),
-        Array('My Way','mysearch.myway.com','us','searchfor','fr',10),
-        Array('Metacrawler','metacrawler.*','us','q',null,null),
-        Array('Netscape Search','search.netscape.com','us','query','page',1),
-        Array('MSN','msn.*','us','q',null,null),
-        Array('Moteur Recherche','moteur-recherche.net/moteur-recherche/*/','fr','keyword',null,null),
-        Array('Overture','overture.com','us','Keywords',null,null),
-        Array('Search the Web','sbnl.com','us','s','pp',10),
-        Array('Search the Web','search.lop.com','us','s','pp',10),
-        Array('Supereva','supereva.it','it','q','start',10),
-        Array('Teoma','teoma.com','us','q','page',1),
-        Array('Tiscali','search-dyn.tiscali.*','it','key','offset',10),
-        Array('Voil�','voila.fr','fr','kw','ap',1),
-        Array('Web','web.de','de','su','offset',10),
-        Array('Clarence','search.clarence.com','it','q','page',1),
-        Array('Gazzetta','search.gazzetta.it','it','q','s',10),
-        Array('PagineGialle','paginegialle.it','it','qs','be',10),
-        Array('Jumpy','servizi.mediaset.it','it','searchWord','offset',10),
-        Array('ItaliaPuntoNet','italiapuntonet.net','it','search',null,null),
-        Array('StartNow','search.startnow.*','be','q','start',10),
-        Array('Search','search.it','it','srctxt',null,null),
-        Array('Search','search.com','us','q',null,null),
-        Array('Babylon','babylon.com','us','q',null,null));
+$inf__engine = array (
+        "aol" => array (
+            "reg" => "/search\.aol\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "ask" => array (
+            "reg" => "/ask\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "baidu" => array (
+            "reg" => "/baidu\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "becovi" => array (
+            "reg" => "/search\.becovi\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "bing" => array (
+            "reg" => "/bing\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "brave" => array (
+            "reg" => "/search\.brave\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "daum" => array (
+            "reg" => "/search\.daum\.[\w-]+/m",
+            "ext" => "net"
+        ),
+        "dogpile" => array (
+            "reg" => "/dogpile\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "duckduckgo" => array (
+            "reg" => "/duckduckgo\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "ecosia" => array (
+            "reg" => "/ecosia\.[\w-]+/m",
+            "ext" => "org"
+        ),
+        "excite" => array (
+            "reg" => "/results\.excite\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "gibiru" => array (
+            "reg" => "/gibiru\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "google" => array (
+            "reg" => "/google\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "hotbot" => array (
+            "reg" => "/hotbot\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "karmasearch" => array (
+            "reg" => "/karmasearch\.[\w-]+/m",
+            "ext" => "org"
+        ),
+        "libero" => array (
+            "reg" => "/ricerca\.libero\.[\w-]+/m",
+            "ext" => "it"
+        ),
+        "lycos" => array (
+            "reg" => "/search\.lycos\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "lycos" => array(
+            "reg" => "/search[\w-]+\.lycos\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "lukol" => array (
+            "reg" => "/lukol\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "metager" => array (
+            "reg" => "/metaget\.[\w-]+/m",
+            "ext" => "org"
+        ),
+        "metacrawler" => array (
+            "reg" => "/metacrawler\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "myway" => array (
+            "reg" => "/mysearch\.myway\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "mojeek" => array (
+            "reg" => "/mojeek\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "naver" => array (
+            "reg" => "/search\.naver\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "privacywall" => array (
+            "reg" => "/privacywall\.[\w-]+/m",
+            "ext" => "org"
+        ),
+        "qwant" => array (
+            "reg" => "/qwant\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "yandex" => array (
+            "reg" => "/yandex\.[\w-]+/m",
+            "ext" => "ru"
+        ),
+        "yahoo" => array (
+            "reg" => "/[\w-]+\.search\.yahoo\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "yahoo" => array (
+            "reg" => "/search\.yahoo\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "seznam" => array (
+            "reg" => "/search\.seznam\.[\w-]+/m",
+            "ext" => "cz"
+        ),
+        "swisscows" => array (
+            "reg" => "/swisscows\.[\w-]+/m",
+            "ext" => "com"
+        ),
+        "virgilio" => array (
+            "reg" => "/ricerca\.virgilio\.[\w-]+/m",
+            "ext" => "it"
+        ),
+        "web" => array (
+            "reg" => "/suche\.web\.[\w-]+/m",
+            "ext" => "de"
+        ),
+        "webcrawler" => array(
+            "reg" => "/webcrawler\.[\w-]+/m",
+            "ext" => "com"
+        )
+    );
 
 ############################################################################################
 # CHIAVI DI RICERCA

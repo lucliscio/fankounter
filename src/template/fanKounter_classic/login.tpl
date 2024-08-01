@@ -36,7 +36,7 @@
  					</div>
  					<p class="credits">
 						<a href="{$homepage}">fanKounter</a> an HZKnight Free PHP Script<br/>
-						&copy;2022 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
+						&copy;2024 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
 						
 					</p>
  					<script type="text/javascript" language="javascript">

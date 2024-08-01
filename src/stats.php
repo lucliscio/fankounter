@@ -635,7 +635,7 @@ function _graph_($__data,$__type,$__title,$__header1,$__header2,$__header3,$__co
  $__data=($__restrict)?_restrict_($__data):$__data;
  $__perc=_percentage_($__data,1);
 
- echo"<p class=\"title\">"._strlan_($__title,FALSE)."</p>";
+ echo"<p class=\"title\">"._strlan_($__title,FALSE). "</p>";
  echo"<table cellspacing=\"0\" cellpadding=\"0\" class=\"graph\">";
  echo"<tr>";
  echo"<td colspan=\"".$__colsize1."\" class=\"header\">";

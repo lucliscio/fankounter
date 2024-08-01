@@ -11,6 +11,12 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <base target="_top" />
         <link type="text/css" rel="stylesheet" href="stats.css" />
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.8/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.8/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.8/dist/js/uikit-icons.min.js"></script>
     </head>
     <body>
         <div align="center">
@@ -50,7 +56,7 @@
             </table>
             <p class="credits">
                 <a href="{$homepage}">fanKounter</a> a HZKnight Free PHP Script<br/>
-                &copy;2022 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
+                &copy;2024 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
             </p>
         </div>
     </body>
