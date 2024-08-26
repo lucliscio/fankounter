@@ -1,0 +1,33 @@
+.label-width {
+    width: 70px;
+}
+
+button {
+    width: 200px;
+}
+
+.wizard-flow-chart {
+    border-top: #ffc72c 3px solid;
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0px;
+}
+
+.wizard-flow-chart span {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50%;
+    border: #ffc72c 3px solid;
+    margin-top: -20px;
+    z-index: 100;
+    background: #FFF;
+}
+
+.button-row {
+    margin: 60px 0px 0px 0px;
+    text-align: right;
+}
+
+.wizard-flow-chart span.fill {
+    background: #ffc72c;
+}

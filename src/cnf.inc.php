@@ -64,7 +64,7 @@ error_reporting(0);
 
 // Prefisso per gli input ottenuti mediante get, post, cookie
 //deprecato - import_request_variables("gpc","par__");
-$__inputs = array_merge($_COOKIE,$_REQUEST); 
+$__inputs = array_merge($_COOKIE,$_REQUEST);
 extract($__inputs, EXTR_PREFIX_ALL | EXTR_REFS, 'par_');
 
 ############################################################################################
@@ -117,7 +117,7 @@ define("FLOCK_FILES", "lock_*.tmp");
 
 define("HOMEPAGE", "https://fankounter.hzknight.org/");
 define("EMAIL", "lucliscio@h0model.org");
-define("VERSION", "5.1.0-rc.1");
+define("VERSION", "5.1.0-rc.1 Phoenix");
 
 ############################################################################################
 # CONFIGURAZIONE DEFAULT PER UN CONTATORE

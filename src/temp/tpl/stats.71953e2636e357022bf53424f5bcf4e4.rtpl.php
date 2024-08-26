@@ -10,17 +10,11 @@
         <meta name="keywords" content="accessi,contatore,counter,fanKounter,pagine,PHP,script,statistiche,stats,reload,unici,visitatori,visite,WEB\" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <base target="_top" />
-        <link type="text/css" rel="stylesheet" href="template/fanKounter_classic/stats.css" />
-        <!-- UIkit CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit"3.21.8/dist/css/uikit.min.css@ />
-
-        <!-- UIkit JS -->
-        <script src="https://cdn.jsdelivr.net/npm/uikit"3.21.8/dist/js/uikit.min.js@></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit"3.21.8/dist/js/uikit-icons.min.js@></script>
+        <link type="text/css" rel="stylesheet" href="stats.css" />
     </head>
     <body>
         <div align="center">
-            <img src="template/fanKounter_classic/../../img/fankounter3.0.png" style="width:200px"><br/><br/>
+            <img src="img/fankounter3.0.png" style="width:200px"><br/><br/>
             <table cellspacing="0" cellpadding="0" class="conteiner">
                 <tr>
                     <td align="center">
@@ -56,7 +50,7 @@
             </table>
             <p class="credits">
                 <a href="<?php echo $homepage;?>">fanKounter</a> a HZKnight Free PHP Script<br/>
-                &copy;2022 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
+                &copy;2024 <a href="https://www.hzknight.org">HZKnight</a> | &copy;2002 fanatiko
             </p>
         </div>
     </body>

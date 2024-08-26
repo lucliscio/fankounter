@@ -76,6 +76,7 @@ session_start();
 RainTPL::$tpl_dir = "template/fanKounter_classic/";
 RainTPL::$cache_dir = "temp/tpl/";
 RainTPL::$tpl_ext = "tpl";
+RainTPL::$path_replace = false;
 $view = new RainTPL();
 
 ############################################################################################

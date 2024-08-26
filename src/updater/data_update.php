@@ -1,7 +1,7 @@
 <?php
 
    /*
-    * update.php
+    * data_update.php
     *                                       __       HZKnight free PHP Scripts    _    vs 5.1
     *                                      / _| __ _ _ __   /\ /\___  _   _ _ __ | |_ ___ _ __
     *                                     | |_ / _` | '_ \ / //_/ _ \| | | | '_ \| __/ _ \ '__|
@@ -125,7 +125,9 @@
 
             //Salvo il nuovo file dati
             $status = file_put_contents("./data/$dataName.json", json_encode($newData));
-            if(!$status)throw new Exception("$dataName non sicrivibile",123);
+            if(!$status){
+                throw new Exception("$dataName non sicrivibile",123);
+            }
             
             //Pulisco per evitare sovrapposizioni tra i contatori
             unset($dat__entry);

@@ -17,7 +17,7 @@
  			<tr>
  				<td align="center">
 					<div class="mask">
-						<img src="../../img/fankounter3.0.png" style="width:200px"><br/><br/>
+						<img src="img/fankounter3.0.png" style="width:200px"><br/><br/>
  						<form method="post" action="{$action}">
 	 						<p>{$contatore}</p>
 	 						<p>

@@ -10,14 +10,14 @@
  		<meta name="keywords" content="accessi,contatore,counter,fanKounter,pagine,PHP,script,statistiche,stats,reload,unici,visitatori,visite,WEB" />
  		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
  		<base target="_top" />
- 		<link type="text/css" rel="stylesheet" href="template/fanKounter_classic/stats.css" />
+ 		<link type="text/css" rel="stylesheet" href="stats.css" />
  	</head>
 	<body>
  		<table cellspacing="0" cellpadding="0" style="width:100%;height:100%;">
  			<tr>
  				<td align="center">
 					<div class="mask">
-						<img src="template/fanKounter_classic/../../img/fankounter3.0.png" style="width:200px"><br/><br/>
+						<img src="img/fankounter3.0.png" style="width:200px"><br/><br/>
  						<form method="post" action="<?php echo $action;?>">
 	 						<p><?php echo $contatore;?></p>
 	 						<p>
