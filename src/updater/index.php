@@ -1,5 +1,6 @@
 <?php
     require_once ("../cnf.inc.php");
+    require_once ("../sys.inc.php");
 
     $writable = "";
     $bwritable = "";
@@ -104,7 +105,7 @@ if (!empty($_POST)) {
 
                 <!-- Wizard section 2 -->
                 <section id="licence-section" class="display-none" style="text-align:left">
-                    <h2 class="uk-heading-bullet">Licenza</h2>
+                    <h2 class="uk-heading-bullet">Licenza - fanKounter è un software libero!</h2>
 
                     <div class="row uk-panel uk-panel-scrollable" style="height:250px">
                         <?php require_once ('docs/AGPL_EN.html'); ?>
@@ -127,7 +128,7 @@ if (!empty($_POST)) {
                     <h2 class="uk-heading-bullet">Da aggiornare</h2>
                     
                     <div class="row">
-                        Saranno aggiornati i seguenti contatori e i dai di browscap:
+                        Saranno aggiornati i seguenti contatori e i dati di browscap:
                     </div>
 
                     <div class="row">
@@ -166,24 +167,31 @@ if (!empty($_POST)) {
 
                                     //Check db browscap
                                     $bwritable = "<span class='uk-form-danger'>NO</span>";
-                                    $browscapdir = "../".TEMP_FOLDER."/cache";
-                                    if ( !file_exists($browscapdir) && !is_dir($browscapdir) ) {
-                                        if (is_writable(TEMP_FOLDER)){
-                                            mkdir( $dir );
+                                    $tmp_dir = "../".TEMP_FOLDER;
+                                    $browscapdir = $tmp_dir."cache";
+
+                                    if(!file_exists($tmp_dir)){
+                                        if(is_writable('../')){
+                                            _mkdir_($tmp_dir);
+                                            _mkdir_($browscapdir);
                                             $bwritable = "<span class='uk-form-success'>SI</span>";
                                         }
-                                    } elseif (is_writable($browscapdir)){
+                                    }elseif(!file_exists($browscapdir)){
+                                        if (is_writable($tmp_dir)){
+                                            _mkdir_($browscapdir);
+                                            $bwritable = "<span class='uk-form-success'>SI</span>";
+                                        }
+                                    }elseif (is_dir($browscapdir) && is_writable($browscapdir)){
                                             $bwritable = "<span class='uk-form-success'>SI</span>";
                                     }
-
                                     
+                                                                        
                                     echo <<<FILE
                                         <tr>
-                                            <td>Browscap</td>
+                                            <td>Browscap data</td>
                                             <td>$bwritable</td>
                                         </tr>
                                     FILE;
-
 
                                 ?>
                             </tbody>
